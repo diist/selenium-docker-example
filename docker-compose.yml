@@ -1,0 +1,11 @@
+app:
+  image: node:5
+  working_dir: /cwd
+  command: ./run
+  volumes:
+    - .:/cwd
+  links:
+   - selenium
+
+selenium:
+  image: selenium/standalone-chrome:2.48.2
