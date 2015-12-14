@@ -1,5 +1,10 @@
 #!/bin/bash
 
+printf "\n*** NPM INSTALL ***\n"
 npm install
-sleep 3
+printf "*** /NPM INSTALL ***\n"
+
+
+printf "\n*** RUN SELENIUM TEST ***\n"
 node index.js
+printf "*** /RUN SELENIUM TEST ***\n" 

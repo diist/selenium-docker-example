@@ -1,5 +1,5 @@
 # selenium-docker-example
 
 ```
-$ docker-compose up
+$ docker-compose run test
 ```

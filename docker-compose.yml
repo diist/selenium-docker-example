@@ -1,4 +1,4 @@
-app:
+test:
   image: node:5
   working_dir: /cwd
   command: ./run
