@@ -1,11 +1,18 @@
-test:
+selenium-test:
   image: node:5
   working_dir: /cwd
   command: ./run
   volumes:
-    - .:/cwd
+    - ./selenium-test:/cwd
+  volumes_from:
+    - cache
   links:
-   - selenium
+    - selenium
 
 selenium:
   image: selenium/standalone-chrome:2.48.2
+
+cache:
+  image: node:5
+  volumes:
+    - ./node_modules:/cwd/node_modules

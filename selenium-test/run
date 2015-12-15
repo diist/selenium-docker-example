@@ -7,5 +7,7 @@ printf "*** /NPM INSTALL ***\n"
 sleep 1
 
 printf "\n*** RUN SELENIUM TEST ***\n"
-node index.js
+printf "Expected output: \nGitHub · Where software is built\n"
+printf "\nActual output: \n"
+node selenium-test.js
 printf "*** /RUN SELENIUM TEST ***\n" 

@@ -1,0 +1,6 @@
+#!/usr/bin/make -f
+
+default: test
+
+test:
+	docker-compose run selenium-test
