@@ -4,6 +4,7 @@ printf "\n*** NPM INSTALL ***\n"
 npm install
 printf "*** /NPM INSTALL ***\n"
 
+sleep 1
 
 printf "\n*** RUN SELENIUM TEST ***\n"
 node index.js
