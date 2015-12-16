@@ -4,6 +4,8 @@ app:
   command: ./run
   volumes:
     - ./app:/cwd
+  volumes_from:
+    - cache
   expose:
     - "8000"
 
@@ -13,6 +15,8 @@ test:
   command: ./run
   volumes:
     - ./test:/cwd
+  volumes_from:
+    - cache
   links:
     - selenium
 
@@ -20,3 +24,8 @@ selenium:
   image: selenium/standalone-chrome:2.48.2
   links:
     - app
+
+cache:
+  image: node:5
+  volumes:
+    - ./node_modules:/cwd/node_modules
