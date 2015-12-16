@@ -4,6 +4,6 @@ printf "\n*** NPM INSTALL ***\n"
 npm install
 printf "*** /NPM INSTALL ***\n"
 
-printf "\n*** RUN SELENIUM TEST ***\n"
+printf "\n*** RUN SELENIUM TESTS ***\n"
 node selenium-test.js
-printf "*** /RUN SELENIUM TEST ***\n" 
+printf "*** /RUN SELENIUM TESTS ***\n" 
