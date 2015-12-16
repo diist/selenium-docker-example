@@ -12,7 +12,7 @@ test:
   working_dir: /cwd
   command: ./run
   volumes:
-    - ./tests:/cwd
+    - ./test:/cwd
   links:
     - selenium
 
