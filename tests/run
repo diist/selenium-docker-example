@@ -1,13 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 printf "\n*** NPM INSTALL ***\n"
 npm install
 printf "*** /NPM INSTALL ***\n"
 
-sleep 1
-
 printf "\n*** RUN SELENIUM TEST ***\n"
-printf "Expected output: \nGitHub · Where software is built\n"
-printf "\nActual output: \n"
 node selenium-test.js
 printf "*** /RUN SELENIUM TEST ***\n" 

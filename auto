@@ -1,6 +1,12 @@
 #!/usr/bin/make -f
 
-default: test
+default: run_app
 
-test:
-	docker-compose run selenium-test
+run-app:
+	docker-compose run -p 8000:8000 app
+
+run-tests:
+	docker-compose run test
+
+stop:
+	docker-compose stop

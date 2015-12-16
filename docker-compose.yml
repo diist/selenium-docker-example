@@ -1,9 +1,20 @@
-selenium-test:
+app:
   image: node:5
   working_dir: /cwd
   command: ./run
   volumes:
-    - ./selenium-test:/cwd
+    - ./app:/cwd
+  volumes_from:
+    - cache
+  expose:
+    - "8000"
+
+test:
+  image: node:5
+  working_dir: /cwd
+  command: ./run
+  volumes:
+    - ./tests:/cwd
   volumes_from:
     - cache
   links:
@@ -11,6 +22,8 @@ selenium-test:
 
 selenium:
   image: selenium/standalone-chrome:2.48.2
+  links:
+    - app
 
 cache:
   image: node:5
