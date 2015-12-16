@@ -1,5 +1,10 @@
 # selenium-docker-example
 
 ```
-$ docker-compose run test
+$ ./auto run-app
+```
+
+
+```
+$ ./auto run-test
 ```
