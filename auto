@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-default: run_app
+default: run-app
 
 run-app:
 	docker-compose run -p 8000:8000 app
