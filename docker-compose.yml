@@ -8,6 +8,8 @@ services:
     volumes:
       - ./app:/work
       - node5-npm-cache:/work/node_modules
+    ports:
+      - "8000:8000"
     expose:
       - "8000"
 

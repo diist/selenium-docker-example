@@ -1,7 +1,7 @@
 # selenium-docker-example
 
 ```
-$ ./auto run-test
+$ auto/test
 ```
 
 

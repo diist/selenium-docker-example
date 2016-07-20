@@ -1,0 +1,9 @@
+#!/bin/bash -e 
+
+cd $(dirname $0)/..
+
+trap "docker-compose down --volumes" 0
+
+docker volume create --name node5-npm-cache 2>/dev/null
+
+docker-compose run --rm --service-ports "$@"
