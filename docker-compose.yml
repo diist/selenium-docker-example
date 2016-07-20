@@ -1,31 +1,31 @@
-app:
-  image: node:5
-  working_dir: /cwd
-  command: ./run
-  volumes:
-    - ./app:/cwd
-  volumes_from:
-    - cache
-  expose:
-    - "8000"
+version: '2'
 
-test:
-  image: node:5
-  working_dir: /cwd
-  command: ./run
-  volumes:
-    - ./test:/cwd
-  volumes_from:
-    - cache
-  links:
-    - selenium
+services:
+  app:
+    image: node:5
+    working_dir: /work
+    command: ./run
+    volumes:
+      - ./app:/work
+      - node5-npm-cache:/work/node_modules
+    expose:
+      - "8000"
 
-selenium:
-  image: selenium/standalone-chrome:2.53.0
-  links:
-    - app
+  test:
+    image: node:5
+    working_dir: /work
+    command: ./run
+    volumes:
+      - ./test:/work
+      - node5-npm-cache:/work/node_modules
+    depends_on:
+      - selenium
 
-cache:
-  image: node:5
-  volumes:
-    - ./node_modules:/cwd/node_modules
+  selenium:
+    image: selenium/standalone-chrome:2.53.0
+    depends_on:
+      - app
+
+volumes:
+  node5-npm-cache:
+    external: true
